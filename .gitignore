@@ -1,0 +1,8 @@
+/_minted-laporan/*
+*.aux
+*.log
+*.lol
+*.out
+*.pdf
+*.gz
+*.toc

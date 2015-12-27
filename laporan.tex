@@ -1,0 +1,111 @@
+\documentclass[11pt,a4paper,twoside]{book}
+\usepackage[tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.0cm]{geometry}
+\setcounter{secnumdepth}{5}
+\usepackage{fontspec}
+	\setsansfont{Trebuchet MS}
+	\setmainfont{Times New Roman}
+	\setmonofont[Scale=0.9]{Courier New}
+\usepackage{tocbibind}
+\usepackage{enumitem}
+\usepackage{pdflscape}
+\usepackage{minted}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[verbose]{wrapfig}
+\usepackage{changepage}
+\usepackage{eso-pic}
+\usepackage{ragged2e}
+\usepackage{xesearch}
+\usepackage[english]{babel}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{caption}
+\usepackage{enumitem}
+\setlist{nolistsep}
+\usepackage{float}
+%\usepackage{longtable}
+\usepackage{array,etoolbox}
+	\preto\tabular{\setcounter{magicrownumbers}{0}}
+	\preto\longtable{\setcounter{magicrownumbers}{0}}
+	\newcounter{magicrownumbers}
+	\newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
+
+\usepackage{setspace}
+	\singlespacing
+\usepackage{fancyhdr}
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0pt}
+	\lhead[\thepage]{}
+	\rhead[]{\thepage}
+	\pagestyle{fancy}
+
+
+\usepackage{titlesec}
+	\titleformat{\chapter}[display]{\filcenter\fontsize{11}{11}\bfseries}{\chaptername \ \thechapter}{11pt}{\filcenter\fontsize{11}{11}\bfseries\uppercase}
+	\titlespacing*{\chapter}{0pt}{-0.5cm}{40pt}
+	\titlespacing*{\section}{0pt}{11pt}{0pt}
+	\titlespacing*{\subsection}{0pt}{11pt}{0pt}
+	\titlespacing*{\subsubsection}{0pt}{11pt}{0pt}
+	\titleformat*{\section}{\fontsize{11}{11}\bfseries}
+	\titleformat*{\subsection}{\fontsize{11}{11}\bfseries}
+	\titleformat*{\subsubsection}{\fontsize{11}{11}\bfseries}
+	
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+%\usepackage{listings}
+
+% Excel to LaTeX
+\usepackage{booktabs}
+%\usepackage{tabularx}
+
+\addto\captionsbahasa{%
+	\renewcommand\contentsname{CONTENTS}%
+}
+
+\renewcommand\listingscaption{Source Code}
+\renewcommand\listoflistingscaption{SOURCE CODE LIST}
+\renewcommand*\thechapter{\arabic{chapter}}
+\newcommand{\var}[2]{\newcommand{#1}{#2}}
+\include{variabel}
+
+% Pemenggalan Tambahan
+\include{pemenggalan}
+
+\makeatletter
+\def\emptypage@emptypage{%
+	 \begin{center}
+	 \emph{This page intentionally left blank}
+	 \end{center}
+	 \newpage%
+}%
+\def\cleardoublepage{%
+		\clearpage%
+		\if@twoside%
+			\ifodd\c@page%
+				% do nothing
+			\else%
+				\emptypage@emptypage%
+			\fi%
+		\fi%
+}%
+\makeatother
+
+\begin{document}
+	\title {\judul}
+	%\include{istilah/istilah}
+	
+	\frontmatter
+		\phantomsection
+		\addcontentsline{toc}{chapter}{COVER}
+		\include{sampul/sampul}
+		%\tableofcontents
+		%\phantomsection
+		%\addcontentsline{toc}{chapter}{SOURCE CODE LIST}
+		%\listoflistings
+	
+	\mainmatter
+		%\chapter{CONTENT}
+		\include{metode/metode}
+		\include{kode/kode}
+		\include{hasil/hasil}
+		\include{analisis/analisis}
+\end{document}
