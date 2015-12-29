@@ -57,8 +57,9 @@
 \usepackage{booktabs}
 %\usepackage{tabularx}
 
-\addto\captionsbahasa{%
+\addto\captionsenglish{%
 	\renewcommand\contentsname{CONTENTS}%
+	\renewcommand\chaptername{CHAPTER}%
 }
 
 \renewcommand\listingscaption{Source Code}
@@ -96,16 +97,25 @@
 	\frontmatter
 		\phantomsection
 		\addcontentsline{toc}{chapter}{COVER}
+		\cleardoublepage
 		\include{sampul/sampul}
-		%\tableofcontents
-		%\phantomsection
-		%\addcontentsline{toc}{chapter}{SOURCE CODE LIST}
-		%\listoflistings
-	
+		\tableofcontents
+		\cleardoublepage
+		\phantomsection
+		\addcontentsline{toc}{chapter}{SOURCE CODE LIST}
+		\listoflistings
+		\cleardoublepage
+		
 	\mainmatter
-		%\chapter{CONTENT}
-		\include{metode/metode}
-		\include{kode/kode}
-		\include{hasil/hasil}
-		\include{analisis/analisis}
+		\chapter{CONTENT}
+		\input{metode/metode}
+		\input{kode/kode}
+		\input{hasil/hasil}
+		\input{analisis/analisis}
+		
+		\cleardoublepage
+	
+		\renewcommand\chaptername{ATTACHMENT}
+	\appendix
+		\include{kode/lampiran}
 \end{document}
