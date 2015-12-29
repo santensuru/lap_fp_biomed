@@ -3,6 +3,16 @@ From the result, can be seen that the most common gene that show up in the clust
 
 Every heatmap of every cluster can be see at figure \ref{pic:cluster-1}, \ref{pic:cluster-2}, \ref{pic:cluster-3}, \ref{pic:cluster-4} and \ref{pic:cluster-5}. At figure \ref{pic:cluster-5} the heatmap have the most red color (sorry if the capture not good quality) compare with other figure. In chapter results, this cluster (cluster 5) have the offten gene ontology id GO:0005515, with the main basic function of protein binding.
 
+Refered to \href{http://amigo.geneontology.org/amigo/term/GO:0005515}{http://amigo.geneontology.org/amigo/term/GO:0005515}, this GO "protein binding" is part of molecular function. This also has an another name or id, GO:0045308, and synonyms characteristic are:  protein amino acid binding, alpha-2 macroglobulin receptor-associated protein activity, protein degradation tagging activity, protein tagging activity, and protein folding chaperone. The graphs view of this GO can see at figure \ref{pic:gv-go}. This GO has a subset (actually we are not known what is it) are:
+\begin{itemize}
+	\item gosubset\_prok
+    \item goslim\_plant
+    \item goslim\_pir
+    \item goslim\_candida
+    \item goslim\_aspergillus
+    \item goslim\_chembl
+\end{itemize}
+
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[height=6.5cm]{analisis/raw.jpg}
@@ -52,4 +62,9 @@ Every heatmap of every cluster can be see at figure \ref{pic:cluster-1}, \ref{pi
 	\label{pic:cluster-5}
 \end{figure}
 
-
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=13cm]{analisis/visualize.png}
+	\caption{Graphs view of GO:0005515}
+	\label{pic:gv-go}
+\end{figure}
